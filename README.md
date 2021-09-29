@@ -7,6 +7,8 @@
 
 ![Light Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss2.png)
 
+![Glass Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss3.png)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
