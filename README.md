@@ -3,9 +3,9 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Dark Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss1.png)
+![Light Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss1.png)
 
-![Light Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss2.png)
+![Dark Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss2.png)
 
 ![Glass Mode](https://github.com/JayantGoel001/Clock/blob/master/screenshots/ss3.png)
 
