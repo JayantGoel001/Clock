@@ -8,10 +8,13 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #091921;
+    overflow: hidden;
 }
 body.light{
     background: #d1dae3;
+}
+body.dark{
+    background: #091921;
 }
 .clock{
     width: 350px;
@@ -19,7 +22,7 @@ body.light{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #091921 url("clock.png");
+    background: #091921 url("images/clock.png");
     background-size: cover;
     border: 4px solid #091921;
     border-radius: 50%;
@@ -29,7 +32,7 @@ body.light{
                 inset 0 15px 15px rgba(0,0,0,0.3);
 }
 body.light .clock{
-    background: #d1dae3 url("clock.png");
+    background: #d1dae3 url("images/clock-dark.png");
     background-size: cover;
     border: 4px solid #cad3dc;
     box-shadow: -8px -8px 15px rgba(255,255,255,0.5),
@@ -100,6 +103,71 @@ body.light .mn:before{
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
+
+body.glass::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,#E91E63,#E91E63 50%,#FFC107 50%,#FFC107);
+}
+body.glass::after{
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg,#03A9F4,#03A9F4 50%,transparent 50%,transparent);
+    animation: animate 5s ease-in-out infinite;
+}
+body.glass .container{
+    position: relative;
+}
+body.glass .container::before{
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(rgba(0,0,0,0.2),transparent,transparent);
+    border-radius: 50%;
+}
+body.glass .box{
+    position: relative;
+    z-index: 1;
+    width: 370px;
+    height: 370px;
+    backdrop-filter: blur(25px);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.5);
+    animation: animate 5s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+body.glass .clock{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: radial-gradient(transparent,rgba(255,255,255,0.2)),url("images/clock.png");
+    background-size: cover;
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-bottom: none;
+    border-right: none;
+    box-shadow: -10px -10px 20px rgba(255,255,255,0.1),
+                10px 10px 20px rgba(0,0,0,0.1),
+                0 40px 50px rgba(0,0,0,0.2);
+}
+body.glass .mn:before{
+    background: #091921;
+}
+body.glass .sc:before{
+    background: white;
+}
 .toggleClass{
     position: absolute;
     top: 30px;
@@ -114,6 +182,7 @@ body.light .mn:before{
     cursor: pointer;
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 .toggleClass:before{
     position: absolute;
@@ -127,4 +196,27 @@ body.light .toggleClass{
 }
 body.light .toggleClass:before{
     content: 'Dark Mode';
+}
+body.dark .toggleClass{
+    color: white;
+    background: linear-gradient(45deg,#E91E63,#E91E63 50%,#FFC107 50%,#FFC107);
+}
+body.dark .toggleClass:before{
+    content: 'Glass Mode';
+}
+body.glass .toggleClass{
+    color: white;
+    background: white;
+}
+body.glass .toggleClass:before{
+    content: 'Light Mode';
+}
+
+@keyframes animate {
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
 }

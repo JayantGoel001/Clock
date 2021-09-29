@@ -1,6 +1,14 @@
+const body = document.querySelector("body");
+let i = 0;
 const toggleClass = ()=>{
-	const body = document.querySelector("body");
-	body.classList.toggle('light');
+	if(i === 0) {
+		body.classList.replace('light','dark');
+	}else if( i=== 1){
+		body.classList.replace('dark','glass');
+	}else{
+		body.classList.replace('glass','light');
+	}
+	i = (i+1)%3;
 }
 
 const deg = 6;
